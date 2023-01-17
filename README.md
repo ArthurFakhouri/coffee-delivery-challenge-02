@@ -14,6 +14,8 @@
   <a href="#memo-licença">Licença</a>
 </p>
 
+<a target="_blank" href="https://coffee-delivery-challenge-02-mif9.vercel.app">Demo</a>
+
 ## 🈸 Projeto
 
 Coffee delivery é um projeto simples de um cardápio de cafés, que foi criado com o intuito de reforçar os conceitos de ReactJS.
