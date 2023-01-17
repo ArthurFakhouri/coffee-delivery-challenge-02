@@ -17,11 +17,13 @@ export const HomeContainer = styled.div`
 export const CoffeeList = styled.ul`
     list-style: none;
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
     gap: 2.5rem 2rem;
     
     @media only screen and (min-width: 1200px) {
         display: grid;
+        justify-content: initial;
         grid-template-columns: repeat(4, 1fr);
         column-gap: 2rem;
         row-gap: 2.5rem;
