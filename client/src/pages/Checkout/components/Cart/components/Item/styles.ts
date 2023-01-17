@@ -6,54 +6,78 @@ interface ButtonDelete {
 
 export const ItemContainer = styled.div`
     display: flex;
-    justify-content: space-between;
-    padding: .5rem .25rem;
+    padding: .5rem;
+    padding-right: .5rem;
 
-    & > span {
-        color: ${props => props.theme["base-text"]};
-        font-weight: 700;
-        line-height: 130%;
+    @media only screen and (max-width: 600px) {
+        flex-direction: column;
     }
 `
 
 export const Coffee = styled.div`
     display: flex;
+    width: 100%;
     gap: 1.25rem;
 
     & > img {
         width: 4rem;
         height: 4rem;
+        object-fit: cover;
+    }
+`
+
+export const Data = styled.div`
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: .5rem;
+
+    & > h5 {
+        color: ${props => props.theme["base-subtitle"]};
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 130%;
     }
 
-    & > div {
+    & > div:first-child {
         display: flex;
-        flex-direction: column;
-        gap: .5rem;
+        width: 100%;
+        justify-content: space-between;
 
         & > span {
-            color: ${props => props.theme["base-subtitle"]};
+            color: ${props => props.theme["base-text"]};
+            font-weight: 700;
             line-height: 130%;
         }
     }
-
-    & > div > div {
+    
+    & > div:last-child {
         display: flex;
         gap: .5rem;
+    }
+
+    & > div {
+        @media only screen and (max-width: 600px) {
+            flex-direction: column;
+        }
     }
 `
 
 export const Delete = styled.button<ButtonDelete>`
+    max-width: 8rem;
+    height: 38px;
+
     display: flex;
     justify-content: center;
     align-items: center;
     gap: .25rem;
+    padding: 0 .5rem;
 
     background: ${props => props.theme["base-button"]};
     transition: .5s background;
 
     border: none;
     border-radius: 6px;
-    padding: 0 .5rem;
     color: ${props => props.theme["base-text"]};
 
     & > svg {

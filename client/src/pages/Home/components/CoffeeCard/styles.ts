@@ -1,8 +1,9 @@
 import styled from "styled-components";
 
-export const CoffeeCardContainer = styled.div`
-    width: 16rem;
+export const CoffeeCardContainer = styled.li`
+    max-width: 16rem;
     height: 19.375rem;
+    max-height: 19.375rem;
     background: ${props => props.theme["base-card"]};
     border-radius: 6px 36px;
 
@@ -18,7 +19,7 @@ export const CoffeeCardContainer = styled.div`
         height: 7.5rem;
     }
 
-    strong {
+    label {
         font-family: 'Baloo 2', sans-serif;
         color: ${props => props.theme["base-subtitle"]};
         font-weight: 700;
@@ -48,7 +49,7 @@ export const Categories = styled.ul`
         border-radius: 100px;
         padding: .25rem .5rem;
         font-weight: 700;
-        font-size: .625rem;
+        font-size: .75rem;
         line-height: 130%;
         text-transform: uppercase;
     }
@@ -56,7 +57,9 @@ export const Categories = styled.ul`
 
 export const Buy = styled.div`
     display: flex;
-    gap: 1.5rem;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
 
     & > span {
         font-size: .875rem;
@@ -74,6 +77,7 @@ export const Buy = styled.div`
 
 export const Actions = styled.div`
     display: flex;
+    align-items: center;
     gap: .5rem;
 
     & > button {

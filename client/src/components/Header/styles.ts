@@ -1,20 +1,34 @@
 import styled from "styled-components";
 
-export const HeaderFit = styled.div`
+interface HeaderFitProps {
+    offsetWidth: number;
+}
+
+export const HeaderFit = styled.header<HeaderFitProps>`
     position: sticky;
     top: 0px;
     background-color: ${props => props.theme.background};
 
     display: flex;
     justify-content: center;
+    z-index: 1;
+    
+    & > div {
+        width: ${props => props.offsetWidth ? `${props.offsetWidth}px` : 'auto'};
+    }
 `
 
-export const HeaderContainer = styled.header`
-    max-width: 90rem;
-    width: 90rem;
+export const HeaderContainer = styled.div`
     display: flex;
     justify-content: space-between;
-    padding: 2rem 10rem;
+    padding: 2rem 0;
+    padding-right: 10px;
+
+    @media only screen and (min-width: 1440px) {
+        max-width: 90rem;
+        width: 90rem;
+        padding: 2rem 10rem;
+    }
 `
 
 export const Actions = styled.div`
@@ -35,9 +49,27 @@ export const Location = styled.div`
 
     background: ${props => props.theme["purple-light"]};
     color: ${props => props.theme["purple-dark"]};
+    cursor: pointer;
+
+    &:hover > span {
+        visibility: visible;
+    }
 
     & svg {
         color: ${props => props.theme.purple};
+    }
+
+    @media only screen and (max-width: 600px) {
+        & > span {
+            background-color: ${props => props.theme["base-title"]};
+            color: ${props => props.theme.white};
+            position: absolute;
+            padding: .5rem;
+            border-radius: 8px;
+            top: 75%;
+            right: 16px;
+            visibility: hidden;
+        }
     }
 `
 

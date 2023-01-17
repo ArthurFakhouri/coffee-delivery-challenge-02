@@ -3,7 +3,6 @@ import styled from "styled-components"
 const CompleteOrder = styled.div`
     padding: 2.5rem;
     border-radius: 6px;
-    width: 40rem;
 
     display: flex;
     flex-direction: column;
@@ -11,14 +10,16 @@ const CompleteOrder = styled.div`
     
     background: ${props => props.theme["base-card"]};
 
-    & > div > span {
+    & > section > h5 {
         display: flex;
         gap: .5rem;
+        font-size: 1rem;
+        font-weight: 400;
         line-height: 130%;
         color: ${props => props.theme["base-subtitle"]};
     }
 
-    & > div > p {
+    & > section > p {
         margin-left: calc(22px + .5rem);
         font-size: .875rem;
         line-height: 130%;
@@ -29,7 +30,7 @@ const CompleteOrder = styled.div`
 export const AddressContainer = styled(CompleteOrder)`
     margin-top: 1rem;
 
-    & > div > span > svg{
+    & > section > h5 > svg{
         color: ${props => props.theme["yellow-dark"]};
     }
 `
@@ -47,7 +48,7 @@ export const Form = styled.form`
     }
 
     & > input:first-child {
-        width: 12.5rem;
+        max-width: 12.5rem;
     }
 
     & > button {
@@ -78,33 +79,48 @@ export const Form = styled.form`
 
     & > div {
         display: flex;
-        position: relative;
         gap: .75rem;
 
         & > input:first-child {
-            width: 12.5rem;
+            max-width: 12.5rem;
         }
 
-        & > input:nth-child(2) {
+        & input:nth-child(2) {
             width: 100%;
-        }
-
-        & > input:nth-child(2):valid ~ label {
-            position: absolute;
-            font-size: .75rem;
-            color: ${props => props.theme["base-label"]};
-            font-style: italic;
-            top: 1rem;
-            right: 1rem;
-            cursor: text;
-        }
-
-        & > input:nth-child(2):not(:valid) ~ label {
-            display: none;
         }
 
         & > input:nth-child(3) {
             width: 3.75rem;
         }
+
+        & > div {
+            display: flex;
+            align-items: center;
+            position: relative;
+            flex: 1;
+        }
+    }
+
+    @media only screen and (max-width: 600px) {
+        & > div {
+            flex-direction: column;
+        }
+    }
+`
+
+export const Complement = styled.input`
+    width: 100%;
+
+    &:not(:placeholder-shown) ~ label{
+        display: none;
+    }
+
+    & ~ label {
+        position: absolute;
+        font-size: .75rem;
+        color: ${props => props.theme["base-subtitle"]};
+        right: 1rem;
+        font-style: italic;
+        cursor: text;
     }
 `

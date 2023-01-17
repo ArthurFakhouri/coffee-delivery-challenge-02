@@ -22,7 +22,6 @@ export const SuccessContainer = styled.div`
 `
 
 export const BorderWrap = styled.div`
-    width: 32.875rem;
     margin-top: 2.5rem;
     background: linear-gradient(
         to right, 
@@ -42,9 +41,22 @@ export const BorderWrap = styled.div`
         flex-direction: column;
         gap: 2rem;
     }
+
+    @media only screen and (min-width: 1200px) {
+        width: 32.875rem;
+    }
 `
 
 export const Data = styled.div`
     display: flex;
     justify-content: space-between;
+
+    & > img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    @media only screen and (max-width: 768px) {
+        flex-direction: column-reverse;
+    }
 `

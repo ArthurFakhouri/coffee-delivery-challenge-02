@@ -36,19 +36,19 @@ export function CoffeeCard(coffee: CoffeeCardProps) {
 
     return (
         <CoffeeCardContainer>
-            <img src={coffee.image} />
+            <img src={coffee.image} alt={`"${coffee.title}" cup`} />
             <Categories>
                 {coffee.categories.map((category, index) =>
                     <li key={category.name + index}>{category.name}</li>
                 )}
             </Categories>
-            <strong>{coffee.title}</strong>
+            <label htmlFor={`quantity${coffee.id}`}>{coffee.title}</label>
             <p>{coffee.description}</p>
             <Buy>
                 <span>R$ <span>{coffee.price}</span></span>
                 <Actions>
-                    <Counter count={count} updateCountValue={updateCountValue} />
-                    <button onClick={() => handleAddToCart(coffee, count)}><ShoppingCart size={22} weight="fill" /></button>
+                    <Counter id={coffee.id} count={count} updateCountValue={updateCountValue} />
+                    <button aria-label="Add To Cart" onClick={() => handleAddToCart(coffee, count)}><ShoppingCart size={22} weight="fill" /></button>
                 </Actions>
             </Buy>
         </CoffeeCardContainer>

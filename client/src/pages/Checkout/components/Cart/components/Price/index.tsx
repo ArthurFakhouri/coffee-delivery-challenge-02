@@ -29,8 +29,8 @@ export function Price() {
                 <span>R$ 3,50</span>
             </SubTitle>
             <Title>
-                <span>Total</span>
-                <span>R$ {totalToPay}</span>
+                <h3>Total</h3>
+                <h3>R$ {totalToPay}</h3>
             </Title>
         </PriceContainer>
     )

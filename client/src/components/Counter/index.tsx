@@ -4,7 +4,7 @@ import { CounterContainer } from "./styles";
 
 interface CounterProps {
     count: number;
-    id?: number;
+    id: number;
     updateCountValue: (newCountNumber: number, coffeeItemId?: number) => void;
 }
 
@@ -39,7 +39,7 @@ export function Counter({ count, id, updateCountValue }: CounterProps) {
     return (
         <CounterContainer>
             <Minus size={14} weight="bold" onClick={() => handleSetCount(-1)} />
-            <input type="text" value={count} onChange={handleChangeCount} />
+            <input id={`quantity${id}`} type="text" value={count} onChange={handleChangeCount} />
             <Plus size={14} weight="bold" onClick={() => handleSetCount(1)} />
         </CounterContainer>
     )

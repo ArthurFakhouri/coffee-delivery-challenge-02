@@ -4,10 +4,11 @@ import { CoffeeList, HomeContainer } from "./styles";
 import { CoffeeCard } from "./components/CoffeeCard";
 
 export function Home() {
+
     return (
         <HomeContainer>
             <Intro />
-            <strong>Nossos cafés</strong>
+            <h2>Nossos cafés</h2>
             <CoffeeList>
                 {coffeeList.map(coffee =>
                     <CoffeeCard key={coffee.id} {...coffee}

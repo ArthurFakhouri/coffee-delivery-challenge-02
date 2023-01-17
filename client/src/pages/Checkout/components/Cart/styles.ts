@@ -4,7 +4,6 @@ import styled from "styled-components";
 export const CartContainer = styled.div`
     padding: 2.5rem;
     border-radius: 6px 44px;
-    width: 28rem;
     margin-top: 1rem;
 
     display: flex;
@@ -41,6 +40,10 @@ export const CartContainer = styled.div`
             cursor: not-allowed;
             opacity: .7;
         }
+    }
+
+    @media only screen and (min-width: 1200px) {
+        width: 28rem;
     }
 `
 

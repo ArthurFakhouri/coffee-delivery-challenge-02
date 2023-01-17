@@ -6,15 +6,15 @@ import { CheckoutContainer } from "./styles";
 export function Checkout() {
     return (
         <CheckoutContainer>
-            <div>
-                <strong>Complete seu pedido</strong>
+            <section>
+                <h4>Complete seu pedido</h4>
                 <Address />
                 <Payment />
-            </div>
-            <div>
-                <strong>Cafés selecionados</strong>
+            </section>
+            <section>
+                <h4>Cafés selecionados</h4>
                 <Cart />
-            </div>
+            </section>
         </CheckoutContainer>
     )
 }

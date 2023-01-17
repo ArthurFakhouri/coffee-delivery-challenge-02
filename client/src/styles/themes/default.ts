@@ -7,7 +7,7 @@ export const defaultTheme = {
     'purple-light': '#ebe5f9',
     'purple-dark': '#4b2995',
 
-    'red': '#AB222E',
+    'red': '#d02836',
 
     'white': '#ffffff',
     'background': '#fafafa',
@@ -19,4 +19,4 @@ export const defaultTheme = {
     'base-text': '#574f4d',
     'base-subtitle': '#403937',
     'base-title': '#272221',
-}
+} as const

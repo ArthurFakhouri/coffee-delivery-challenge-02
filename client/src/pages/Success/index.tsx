@@ -12,7 +12,7 @@ export function Success() {
                 <BorderWrap>
                     <Content />
                 </BorderWrap>
-                <img src={OrderPlacedImg} />
+                <img src={OrderPlacedImg} alt="A man delivering the order with his scooter" />
             </Data>
         </SuccessContainer>
     )

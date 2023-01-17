@@ -6,20 +6,32 @@ export const IntroContainer = styled.div`
     gap: 3.5rem;
 
     padding: 5.75rem 0;
+
+    @media only screen and (max-width: 600px) {
+        flex-direction: column;
+    }
+`
+
+export const Aside = styled.aside`
+    img {
+        max-width: 100%;
+        height: auto;
+    }
 `
 
 export const Main = styled.main`
     display: flex;
     flex-direction: column;
+    flex: 1;
     gap: 4.125rem;
 `
 
-export const Title = styled.div`
+export const Title = styled.section`
     display: flex;
     flex-direction: column;
     gap: 1rem;
 
-    strong {
+    h1 {
         font-family: 'Baloo 2', sans-serif;
         font-weight: 800;
         font-size: 3rem;
@@ -27,7 +39,7 @@ export const Title = styled.div`
         color: ${props => props.theme["base-title"]}
     }
 
-    span {
+    p {
         font-size: 1.25rem;
         line-height: 130%;
         color: ${props => props.theme["base-subtitle"]};
@@ -39,6 +51,11 @@ export const Items = styled.div`
     grid-template-columns: auto auto;
     column-gap: 2.5rem;
     row-gap: 1.25rem;
+
+    @media only screen and (max-width: 600px) {
+        display: flex;
+        flex-direction: column;
+    }
 
     span {
         display: flex;

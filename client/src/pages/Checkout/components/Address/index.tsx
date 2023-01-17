@@ -1,5 +1,5 @@
 import { MapPinLine } from "phosphor-react";
-import { AddressContainer, Form } from "./styles";
+import { AddressContainer, Complement, Form } from "./styles";
 import * as zod from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from "react-hook-form";
@@ -30,8 +30,8 @@ export function Address() {
             cidade: '',
             uf: '',
             bairro: '',
-            numero: '',
-            complemento: ''
+            complemento: '',
+            numero: ''
         }
     })
 
@@ -48,19 +48,20 @@ export function Address() {
 
     return (
         <AddressContainer>
-            <div>
-                <span><MapPinLine size={22} />Endereço de Entrega</span>
+            <section>
+                <h5><MapPinLine size={22} />Endereço de Entrega</h5>
                 <p>Informe o endereço onde deseja receber seu pedido</p>
-            </div>
+            </section>
 
             <Form onSubmit={handleSubmit(handleCreateAddress)} >
                 <input type="text" placeholder="CEP" {...register('cep')} />
                 <input type="text" placeholder="Rua" {...register('rua')} />
                 <div>
                     <input type="text" placeholder="Número" {...register('numero')} />
-                    <input type="text" id="complemento"
-                        pattern="$" placeholder="Complemento" {...register('complemento')} />
-                    <label htmlFor="complemento">Opcional</label>
+                    <div>
+                        <Complement type="text" id="complemento" placeholder="Complemento" {...register('complemento')} />
+                        <label htmlFor="complemento">Opcional</label>
+                    </div>
                 </div>
                 <div>
                     <input type="text" placeholder="Bairro" {...register('bairro')} />

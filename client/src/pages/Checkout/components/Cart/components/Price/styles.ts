@@ -20,7 +20,7 @@ export const SubTitle = styled(titlePattern)`
         line-height: 130%;
     }
 
-    & > span:last-child{
+    & > h3:last-child{
         line-height: 130%;
     }
 `

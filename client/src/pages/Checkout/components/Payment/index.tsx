@@ -19,10 +19,10 @@ export function Payment() {
 
     return (
         <PaymentContainer>
-            <div>
-                <span><CurrencyDollar size={22} />Pagamento</span>
+            <section>
+                <h5><CurrencyDollar size={22} />Pagamento</h5>
                 <p>O pagamento é feito na entrega. Escolha a forma que deseja pagar</p>
-            </div>
+            </section>
             <PaymentMethods>
                 <label>
                     <CreditCard size={16} />Cartão de Crédito
